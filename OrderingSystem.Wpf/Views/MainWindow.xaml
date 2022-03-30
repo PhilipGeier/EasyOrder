@@ -1,0 +1,88 @@
+﻿<Window x:Class="OrderingSystem.Wpf.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:OrderingSystem.Wpf.Views"
+        mc:Ignorable="d"
+        Title="EasyOrder - Ordering System" Height="1080" Width="1920">
+    <Grid ShowGridLines="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="310"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Rendering the Background -->
+        <Rectangle Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Fill="#40435B"/>
+        <Border Grid.Row="0" 
+                Grid.Column="0" 
+                Grid.ColumnSpan="2"
+                BorderBrush="DimGray"
+                BorderThickness="0,0,0,3"/>
+        <Rectangle Grid.Row="1" 
+                   Grid.Column="1" 
+                   Fill="DarkGray" 
+                   Stroke="Black"/> 
+        <Border Grid.Column="1" 
+                Grid.Row="1"
+                BorderBrush="DimGray"
+                BorderThickness="3,0,0,0"/>
+        
+        <!-- Rendering the Header -->
+        <TextBlock Grid.Row="0"
+                   Grid.Column="0"
+                   Margin="5,0,0,0"
+                   FontSize="40"
+                   FontFamily="Segoe UI"
+                   Foreground="White"
+                   VerticalAlignment="Center">Ansicht:</TextBlock>
+        <StackPanel Grid.Row="0"
+                    Grid.Column="0"
+                    Margin="150, 0,0,0"
+                    Orientation="Horizontal">
+            <Button x:Name="GraphicButton"
+                    HorizontalAlignment="Left"
+                    Height="60"
+                    Width="160"
+                    Content="Grafik"
+                    FontSize="35"
+                    Click="OnGraphicClick"/>
+            <Button x:Name="TablesButton"
+                    HorizontalAlignment="Left"
+                    Margin="10,0,0,0"
+                    Height="60"
+                    Width="160"
+                    Content="Tische"
+                    FontSize="35"
+                    Click="OnTablesClick"
+                    />
+            <Button x:Name="GuestsButton"
+                    HorizontalAlignment="Left"
+                    Margin="10,0,0,0"
+                    Height="60"
+                    Width="160"
+                    Content="Gäste"
+                    FontSize="35"
+                    Click="OnGuestsClick"/>
+            
+        </StackPanel>
+        
+        <!-- Rendering Main Content -->
+        <Frame x:Name="ContentFrame"
+               NavigationUIVisibility="Hidden"
+               Grid.Row="1"
+               Grid.Column="0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Source="GraphicView.xaml"/>
+        
+        
+    </Grid>
+</Window>
